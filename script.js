@@ -245,7 +245,7 @@
         const pinPopupClose = document.getElementById('pin-popup-close');
 
         // DEFAULT PIN: Silakan ubah angka ini jika ingin PIN lain
-        const SECRET_PIN = "080910";
+        const SECRET_PIN = "1510";
 
         let pinAttempt = 0;
         let popupTimeout = null;
@@ -351,6 +351,7 @@
 
         if (pinInput) {
             pinInput.addEventListener('input', function () {
+                this.value = this.value.replace(/\D/g, '').slice(0, SECRET_PIN.length);
                 if (pinInput.value.length === SECRET_PIN.length) {
                     // Delay sedikit agar digit terakhir terasa diketik
                     setTimeout(() => {

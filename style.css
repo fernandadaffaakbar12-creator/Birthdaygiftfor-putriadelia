@@ -1695,22 +1695,31 @@ body {
 }
 
 #pin-input {
-    width: 80%;
-    padding: 12px;
-    font-size: 1.5rem;
+    width: 75%;
+    max-width: 220px;
+    padding: 12px 14px;
+    font-size: 1.6rem;
+    font-weight: 600;
     text-align: center;
-    border-radius: 10px;
-    border: none;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255, 105, 180, 0.35);
     outline: none;
     background: rgba(255, 105, 180, 0.15);
     color: #5a0022;
-    letter-spacing: 15px;
+    letter-spacing: 16px;
+    text-indent: 16px;
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
+#pin-input::placeholder {
+    color: rgba(90, 0, 34, 0.35);
+    letter-spacing: 16px;
+}
+
 #pin-input:focus {
     background: rgba(255, 105, 180, 0.25);
+    border-color: rgba(255, 20, 147, 0.5);
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
 }
 
@@ -1939,13 +1948,13 @@ body {
     padding: 14px 36px;
     font-family: 'Caveat', cursive;
     font-size: 1.5rem;
-    color: #5a0022;
-    background: linear-gradient(135deg, #fdd835, #ff1493, #f57f17);
-    border: 2px solid rgba(255, 105, 180, 0.4);
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff758c, #ff1493, #ffffff);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4), 0 0 30px rgba(253, 216, 53, 0.15);
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4), 0 0 30px rgba(255, 20, 147, 0.2);
     animation: candleBtnPulse 2.5s ease-in-out infinite;
     position: relative;
     overflow: hidden;
@@ -1958,19 +1967,19 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
     transform: rotate(45deg);
     animation: shimmerBtn 3s ease-in-out infinite;
 }
 
 .btn-tiup-lilin:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(253, 216, 53, 0.6), 0 0 50px rgba(253, 216, 53, 0.25);
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.6), 0 0 50px rgba(255, 20, 147, 0.35);
 }
 
 @keyframes candleBtnPulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4), 0 0 30px rgba(253, 216, 53, 0.15); }
-    50% { box-shadow: 0 4px 30px rgba(253, 216, 53, 0.6), 0 0 50px rgba(253, 216, 53, 0.3); }
+    0%, 100% { box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4), 0 0 30px rgba(255, 20, 147, 0.2); }
+    50% { box-shadow: 0 4px 30px rgba(255, 105, 180, 0.7), 0 0 50px rgba(255, 255, 255, 0.4); }
 }
 
 @keyframes shimmerBtn {
@@ -2079,8 +2088,8 @@ body {
 .candle-message {
     font-family: 'Caveat', cursive;
     font-size: 1.6rem;
-    color: #fdd835;
-    text-shadow: 0 0 15px rgba(253, 216, 53, 0.5);
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 105, 180, 0.8), 0 0 24px rgba(255, 20, 147, 0.4);
     margin-bottom: 30px;
     min-height: 60px;
     opacity: 0;
@@ -2317,66 +2326,122 @@ body {
     100% { opacity: 0; transform: translateX(-50%) translateY(-30px); }
 }
 
-/* KUE */
+/* =========================================
+   BIRTHDAY CAKE (Pink & White Theme)
+========================================= */
 .cake {
     position: relative;
-    width: 200px;
+    width: 210px;
 }
 
-/* Kue bertema kuning */
+/* Piring Kue Cantik (Cake Plate / Stand) */
+.cake::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 246px;
+    height: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #fff0f5 55%, #ffd1dc 100%);
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.95);
+    z-index: 0;
+}
+
+/* Lapisan Atas Kue - Frosting Putih Vanilla dengan Kilau Lembut */
 .cake-top {
-    width: 200px;
-    height: 18px;
-    background: linear-gradient(180deg, #fdd835, #ff1493);
-    border-radius: 8px 8px 0 0;
+    width: 210px;
+    height: 22px;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5f8 50%, #ffe4ec 100%);
+    border-radius: 12px 12px 0 0;
     position: relative;
     z-index: 1;
-    box-shadow: 0 -2px 8px rgba(253, 216, 53, 0.3);
+    box-shadow: 0 -3px 12px rgba(255, 105, 180, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.85);
 }
 
+/* Lapisan Tengah Kue - Strawberry Pink dengan Pita Cream Putih */
 .cake-middle {
-    width: 200px;
-    height: 55px;
-    background: linear-gradient(180deg, #fff0f5, #ffd1dc);
+    width: 210px;
+    height: 58px;
+    background: linear-gradient(180deg, #ff94b8 0%, #ff80a6 50%, #f06292 100%);
     position: relative;
-    border-left: 3px solid rgba(255,255,255,0.1);
-    border-right: 3px solid rgba(0,0,0,0.05);
+    border-left: 3px solid rgba(255, 255, 255, 0.45);
+    border-right: 3px solid rgba(216, 27, 96, 0.25);
+    box-shadow: inset 0 10px 15px rgba(255, 255, 255, 0.35), inset 0 -6px 12px rgba(194, 24, 91, 0.2);
+    overflow: hidden;
 }
 
+/* Hiasan Cream Putih di Tengah Layer */
+.cake-middle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 8px, #ffe4ec 8px, #ffe4ec 14px);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    opacity: 0.95;
+}
+
+/* Lapisan Bawah Kue - Rose Pink Lembut dengan Hiasan Pearl Putih */
 .cake-bottom {
-    width: 200px;
-    height: 55px;
-    background: linear-gradient(180deg, #fdd835, #ff1493);
-    border-radius: 0 0 8px 8px;
+    width: 210px;
+    height: 58px;
+    background: linear-gradient(180deg, #ff6584 0%, #e91e63 50%, #c2185b 100%);
+    border-radius: 0 0 10px 10px;
     position: relative;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    border-left: 3px solid rgba(255,255,255,0.1);
-    border-right: 3px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.35), 0 5px 12px rgba(0, 0, 0, 0.25);
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+    border-right: 3px solid rgba(136, 14, 79, 0.3);
+    overflow: hidden;
 }
 
-/* Frosting drips */
+/* Hiasan Mutiara Cream Putih di Bawah */
+.cake-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: radial-gradient(circle, #ffffff 50%, transparent 60%) repeat-x;
+    background-size: 14px 8px;
+    opacity: 0.95;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+}
+
+/* Lelehan Whipped Cream Putih & Pink Halus */
 .cake-frosting {
     position: absolute;
-    top: 15px;
+    top: 18px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    z-index: 2;
+    z-index: 3;
+    filter: drop-shadow(0 2px 3px rgba(255, 105, 180, 0.25));
 }
 
 .cake-frosting span {
     display: block;
-    width: 16px;
-    height: 22px;
-    background: linear-gradient(180deg, #ffb6c1, #fdd835);
+    width: 18px;
+    height: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fff0f5 70%, #ffc0cb 100%);
     border-radius: 0 0 50% 50%;
+    box-shadow: inset -1px 0 2px rgba(255, 182, 193, 0.3), inset 1px 0 2px rgba(255, 255, 255, 0.85);
     animation: frostDrip 3s ease-in-out infinite alternate;
 }
 
 .cake-frosting span:nth-child(even) {
-    height: 28px;
+    height: 32px;
     animation-delay: 0.5s;
+    background: linear-gradient(180deg, #ffffff 0%, #ffe4ec 75%, #ffb6c1 100%);
 }
 
 @keyframes frostDrip {
@@ -2384,28 +2449,29 @@ body {
     100% { transform: scaleY(1.15); }
 }
 
-/* Dekorasi */
+/* Dekorasi Ikon di Kue */
 .cake-decoration {
     position: absolute;
-    bottom: 60px;
+    bottom: 64px;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 0 10px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
 }
 
-/* Glow di sekitar kue */
+/* Glow Aura Pink & Putih di Sekitar Kue */
 .cake-container::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 250px;
+    width: 260px;
     height: 60px;
-    background: radial-gradient(ellipse, rgba(253, 216, 53, 0.2), transparent 70%);
+    background: radial-gradient(ellipse, rgba(255, 105, 180, 0.35), rgba(255, 255, 255, 0.2) 40%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
 }
@@ -2420,18 +2486,18 @@ body {
     font-family: 'Caveat', cursive;
     font-size: 1.4rem;
     color: #fff;
-    background: linear-gradient(135deg, #fdd835, #ff1493, #f57f17);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, #ff758c, #ff1493, #ff8da1);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.45);
     animation: tiupBtnGlow 2s ease-in-out infinite;
 }
 
 .btn-mulai-tiup:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(253, 216, 53, 0.6);
+    box-shadow: 0 8px 30px rgba(255, 20, 147, 0.65);
 }
 
 .btn-mulai-tiup.hidden-btn {
@@ -2442,8 +2508,8 @@ body {
 }
 
 @keyframes tiupBtnGlow {
-    0%, 100% { box-shadow: 0 4px 20px rgba(253, 216, 53, 0.4); }
-    50% { box-shadow: 0 4px 30px rgba(253, 216, 53, 0.7), 0 0 40px rgba(249, 168, 37, 0.2); }
+    0%, 100% { box-shadow: 0 4px 20px rgba(255, 20, 147, 0.45); }
+    50% { box-shadow: 0 4px 30px rgba(255, 105, 180, 0.75), 0 0 40px rgba(255, 255, 255, 0.4); }
 }
 
 /* =========================================
@@ -2659,10 +2725,10 @@ body {
 .hold-progress-fill {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, #fdd835, #ff1493, #f57f17);
+    background: linear-gradient(90deg, #ff9ecf, #ff1493, #ffffff);
     border-radius: 3px;
     transition: width 0.05s linear;
-    box-shadow: 0 0 8px rgba(253, 216, 53, 0.6);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
 /* Visual feedback saat menekan kue */
